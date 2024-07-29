@@ -87,14 +87,14 @@ public:
 
 
     void init() override;
-    void initVisual() override;
+    void doInitVisual(const core::visual::VisualParams* vparams) override;
     void fwdDraw(core::visual::VisualParams*) override;
     void bwdDraw(core::visual::VisualParams*) override;
     void doDrawVisual(const core::visual::VisualParams* vparams) override;
     void drawTransparent(const core::visual::VisualParams* vparams) override;
     void computeBBox(const core::ExecParams* params, bool onlyVisible = false) override;
 
-    virtual void updateVisual() override;
+    void doUpdateVisual(const core::visual::VisualParams* vparams) override;
 
 };
 

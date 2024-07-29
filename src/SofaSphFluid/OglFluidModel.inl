@@ -48,7 +48,7 @@ void OglFluidModel<DataTypes>::init()
 }
 
 template<class DataTypes>
-void OglFluidModel<DataTypes>::initVisual()
+void OglFluidModel<DataTypes>::doInitVisual(const core::visual::VisualParams* vparams)
 {
     m_spriteDepthFBO = new sofa::gl::FrameBufferObject(true, true, true);
     m_spriteThicknessFBO = new sofa::gl::FrameBufferObject(true, true, true);
@@ -62,7 +62,6 @@ void OglFluidModel<DataTypes>::initVisual()
     const VecCoord& vertices = m_positions.getValue();
 
     // should set a fixed size, or update FBO size if the window is resized
-    sofa::core::visual::VisualParams* vparams = sofa::core::visual::visualparams::defaultInstance();
     const int width = vparams->viewport()[2];
     const int height = vparams->viewport()[3];
 
@@ -119,16 +118,16 @@ void OglFluidModel<DataTypes>::initVisual()
 }
 
 template<class DataTypes>
-void OglFluidModel<DataTypes>::updateVisual()
+void OglFluidModel<DataTypes>::doUpdateVisual(const core::visual::VisualParams* vparams)
 {
     m_positions.updateIfDirty();
     updateVertexBuffer();
 }
 
 template<class DataTypes>
-void OglFluidModel<DataTypes>::fwdDraw(core::visual::VisualParams*)
+void OglFluidModel<DataTypes>::fwdDraw(core::visual::VisualParams* vparams)
 {
-    updateVisual();
+    updateVisual(vparams);
 
 }
 
