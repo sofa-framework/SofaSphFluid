@@ -222,10 +222,9 @@ int SPHFluidSurfaceMapping<In, Out>::addFace(int p1, int p2, int p3, int nbp)
         (unsigned)p2<(unsigned)nbp &&
         (unsigned)p3<(unsigned)nbp)
     {
-        SeqTriangles& triangles = *d_seqTriangles.beginEdit();
+        auto triangles = sofa::helper::getWriteOnlyAccessor(d_seqTriangles);
         int f = int(triangles.size());
         triangles.push_back(Triangle(p1, p3, p2));
-        d_seqTriangles.endEdit();
         return f;
     }
     else
