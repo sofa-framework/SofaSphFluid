@@ -9,12 +9,19 @@
 This SOFA SPH Plugin enables advanced simulations of fluid-object interactions using the Smoothed Particle Hydrodynamics (SPH) method. 
 It allows realistic modeling of fluid dynamics, where fluids and solids interact seamlessly, making it ideal for applications mixing computational fluid dynamics and soft body simulations. 
 
+Here are a some results of the integration:
+|<img align="center" width="40%" height="auto" src="./doc/SpatialGridPointModel.png">|<img align="center" width="40%" height="auto" src="./doc/SPHParticleSink.png">|
+|--|--|
+| SPH against physical barriers | SPH interaction with 3D mesh |
+
 Smoothed Particle Hydrodynamics (SPH) is a computational method used for simulating the behavior of fluids. 
 In SPH, the fluid is represented by a collection of particles, each carrying properties such as mass, position, velocity, and pressure. 
 The fluid's properties are computed by smoothing functions over these particles, allowing for the accurate simulation of fluid flow, turbulence, and fluid-object interactions. 
 SPH is widely used in applications like fluid dynamics, astrophysics, and special effects in computer graphics due to its flexibility and ability to handle complex free-surface flows.
 
-<img align="center" width="50%" height="auto" src="./doc/Sprite-based-rendering.gif">
+<p align="center">
+   <img align="center" width="75%" height="auto" src="./doc/Sprite-based-rendering.gif">
+</p>
 
 ## Build instructions
 
@@ -23,8 +30,6 @@ This plugin relies on the open-source project SOFA. To build the sources of this
 ## Documentation
 
 - [API Documentation](https://sofa-framework.github.io/doc/plugins/usual-plugins/sofasphfluid/oglfluidmodel/)
-<img align="center" width="50%" height="auto" src="./doc/SpatialGridPointModel.png">
-<img align="center" width="50%" height="auto" src="./doc/SPHParticleSink.png">
 
 ## Licence:
 
