@@ -10,7 +10,7 @@ This SOFA SPH Plugin enables advanced simulations of fluid-object interactions u
 It allows realistic modeling of fluid dynamics, where fluids and solids interact seamlessly, making it ideal for applications mixing computational fluid dynamics and soft body simulations. 
 
 Here are a some results of the integration:
-|<img align="center" width="40%" height="auto" src="./doc/SpatialGridPointModel.png">|<img align="center" width="40%" height="auto" src="./doc/SPHParticleSink.png">|
+|<img align="center" width="90%" height="auto" src="./doc/SpatialGridPointModel.png">|<img align="center" width="90%" height="auto" src="./doc/SPHParticleSink.png">|
 |--|--|
 | SPH against physical barriers | SPH interaction with 3D mesh |
 
