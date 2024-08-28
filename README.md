@@ -12,7 +12,7 @@ It allows realistic modeling of fluid dynamics, where fluids and solids interact
 Here are a some results of the integration:
 |<img align="center" width="90%" height="auto" src="./doc/SpatialGridPointModel.png">|<img align="center" width="90%" height="auto" src="./doc/SPHParticleSink.png">|
 |--|--|
-| SPH against physical barriers | SPH interaction with 3D mesh |
+| <center>SPH against physical barriers</center> | <center>SPH interaction with 3D mesh </center>|
 
 Smoothed Particle Hydrodynamics (SPH) is a computational method used for simulating the behavior of fluids. 
 In SPH, the fluid is represented by a collection of particles, each carrying properties such as mass, position, velocity, and pressure. 
