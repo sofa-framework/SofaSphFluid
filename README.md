@@ -16,7 +16,8 @@ Here are a some results of the integration:
 
 Smoothed Particle Hydrodynamics (SPH) is a computational method used for simulating the behavior of fluids. 
 In SPH, the fluid is represented by a collection of particles, each carrying properties such as mass, position, velocity, and pressure. 
-The fluid's properties are computed by smoothing functions over these particles, allowing for the accurate simulation of fluid flow, turbulence, and fluid-object interactions. 
+The properties of the fluid are computed by smoothing functions over these particles, allowing for the accurate simulation of fluid flow, turbulence, and fluid-object interactions. 
+
 SPH is widely used in applications like fluid dynamics, astrophysics, and special effects in computer graphics due to its flexibility and ability to handle complex free-surface flows.
 
 <p align="center">
