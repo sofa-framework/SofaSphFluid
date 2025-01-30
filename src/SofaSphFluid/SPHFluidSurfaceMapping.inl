@@ -244,7 +244,7 @@ void SPHFluidSurfaceMapping<In,Out>::apply(const core::MechanicalParams * /*mpar
     //if (!sph) return;
     if (!grid) return;
     //const InReal invStep = (InReal)(1/d_mStep.getValue());
-    Data< OutVecDeriv > *normals_data = this->toModel->write(core::VecDerivId::normal());
+    Data< OutVecDeriv > *normals_data = this->toModel->write(core::vec_id::write_access::normal);
     OutVecDeriv *normals;
     //if toModel is not a VisualModelImpl
     //(consequently, it does not have any normal vector)
@@ -516,7 +516,7 @@ void SPHFluidSurfaceMapping<In,Out>::draw(const core::visual::VisualParams* vpar
 
 
     std::vector< sofa::type::Vec3 > points2;
-    const OutVecCoord& out = this->toModel->read(core::ConstVecCoordId::position())->getValue();
+    const OutVecCoord& out = this->toModel->read(core::vec_id::read_access::position)->getValue();
     for (unsigned int i=0; i<out.size(); ++i)
     {
         points2.push_back(out[i]);

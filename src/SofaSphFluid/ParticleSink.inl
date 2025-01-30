@@ -91,8 +91,8 @@ void ParticleSink<DataTypes>::animateBegin(double /*dt*/, double time)
     if (!this->mstate) 
         return;
     
-    const VecCoord& x = this->mstate->read(core::ConstVecCoordId::position())->getValue();
-    const VecDeriv& v = this->mstate->read(core::ConstVecDerivId::velocity())->getValue();
+    const VecCoord& x = this->mstate->read(core::vec_id::read_access::position)->getValue();
+    const VecDeriv& v = this->mstate->read(core::vec_id::read_access::velocity)->getValue();
     int n = int(x.size());
     type::vector<Index> remove;
     for (int i=n-1; i>=0; --i) // always remove points in reverse order

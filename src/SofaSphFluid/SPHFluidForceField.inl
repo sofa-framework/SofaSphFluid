@@ -415,7 +415,7 @@ void SPHFluidForceField<DataTypes>::addDForce(const core::MechanicalParams* mpar
     const VecDeriv& dx1 = d_dx.getValue();
     Real kFactor = (Real)sofa::core::mechanicalparams::kFactorIncludingRayleighDamping(mparams, this->rayleighStiffness.getValue());
 
-    const VecCoord& p1 = this->mstate->read(core::ConstVecCoordId::position())->getValue();
+    const VecCoord& p1 = this->mstate->read(core::vec_id::read_access::position)->getValue();
     f1.resize(dx1.size());
     for (unsigned int i=0; i<this->dforces.size(); i++)
     {
@@ -451,7 +451,7 @@ void SPHFluidForceField<DataTypes>::draw(const core::visual::VisualParams* vpara
     vparams->drawTool()->enableBlending();
     vparams->drawTool()->disableDepthTest();
 
-    const VecCoord& x = this->mstate->read(core::ConstVecCoordId::position())->getValue();
+    const VecCoord& x = this->mstate->read(core::vec_id::read_access::position)->getValue();
 
     std::vector<sofa::type::RGBAColor> colorVector;
     std::vector<sofa::type::Vec3> vertices;
