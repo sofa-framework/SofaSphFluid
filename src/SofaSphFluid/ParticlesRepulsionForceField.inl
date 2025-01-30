@@ -131,7 +131,7 @@ void ParticlesRepulsionForceField<DataTypes>::addDForce(const core::MechanicalPa
     VecDeriv& df = *d_df.beginEdit();
     const VecDeriv& dx = d_dx.getValue();
 
-    const VecCoord& x = this->mstate->read(core::ConstVecCoordId::position())->getValue();
+    const VecCoord& x = this->mstate->read(core::vec_id::read_access::position)->getValue();
     const Real h = distance.getValue();
     const Real h2 = h*h;
     const Real ks = (Real)(stiffness.getValue() * sofa::core::mechanicalparams::kFactorIncludingRayleighDamping(mparams, this->rayleighStiffness.getValue()));
@@ -182,7 +182,7 @@ void ParticlesRepulsionForceField<DataTypes>::draw(const core::visual::VisualPar
     const auto stateLifeCycle = vparams->drawTool()->makeStateLifeCycle();
     vparams->drawTool()->disableLighting();
 
-    const VecCoord& x = this->mstate->read(core::ConstVecCoordId::position())->getValue();
+    const VecCoord& x = this->mstate->read(core::vec_id::read_access::position)->getValue();
     const Real h = distance.getValue();
 
     std::vector<sofa::type::RGBAColor> colorVector;
