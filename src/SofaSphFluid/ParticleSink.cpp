@@ -28,10 +28,12 @@
 namespace sofa::component::misc
 {
 
-int ParticleSinkClass = core::RegisterObject("Parametrable particle generator")
-        .add< ParticleSink<defaulttype::Vec3Types> >()
-        .add< ParticleSink<defaulttype::Vec2Types> >()
-        ;
+void registerParticleSink(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Parametrable particle generator.")
+    .add< ParticleSink<defaulttype::Vec3Types> >()
+    .add< ParticleSink<defaulttype::Vec2Types> >());
+}
 
 template class SOFA_SPH_FLUID_API ParticleSink<defaulttype::Vec3Types>;
 template class SOFA_SPH_FLUID_API ParticleSink<defaulttype::Vec2Types>;

@@ -19,8 +19,7 @@
 *                                                                             *
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
-#ifndef SOFASPHFLUID_CONFIG_H
-#define SOFASPHFLUID_CONFIG_H
+#pragma once
 
 #include <sofa/config.h>
 
@@ -33,4 +32,8 @@
 #  define SOFA_SPH_FLUID_API SOFA_IMPORT_DYNAMIC_LIBRARY
 #endif
 
-#endif
+namespace sofasphfluid
+{
+    constexpr const char* MODULE_NAME = "@PROJECT_NAME@";
+    constexpr const char* MODULE_VERSION = "@PROJECT_VERSION@";
+} // namespace sofasphfluid

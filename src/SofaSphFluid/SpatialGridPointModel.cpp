@@ -31,9 +31,11 @@ namespace sofa::component::collision
 
 using namespace sofa::component::collision::geometry;
 
-int SpatialGridPointModelClass = core::RegisterObject("Collision model which represents a set of points, spatially grouped using a SpatialGridContainer")
-        .add< SpatialGridPointModel >()
-        ;
+void registerSpatialGridPointModel(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Collision model which represents a set of points, spatially grouped using a SpatialGridContainer.")
+    .add< SpatialGridPointModel >());
+}
 
 SpatialGridPointModel::SpatialGridPointModel()
     : d_leafScale(initData(&d_leafScale,0,"leafScale","at which level should the first cube layer be constructed.\nNote that this must not be greater than GRIDDIM_LOG2"))
