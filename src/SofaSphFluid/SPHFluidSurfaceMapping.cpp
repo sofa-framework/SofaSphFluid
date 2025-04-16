@@ -31,10 +31,11 @@ namespace sofa::component::mapping
 using namespace sofa::defaulttype;
 
 // Register in the Factory
-int SPHFluidSurfaceMappingClass = core::RegisterObject("SPHFluidSurfaceMappingClass")
-        .addAlias("MarchingCubeMapping")
-        .add< SPHFluidSurfaceMapping< Vec3Types, Vec3Types > >()
-        ;
+void registerSPHFluidSurfaceMapping(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Mapping the surface of a Smooth Particle Hydrodynamics model.")
+    .add< SPHFluidSurfaceMapping< Vec3Types, Vec3Types > >());
+}
 
 template class SOFA_SPH_FLUID_API SPHFluidSurfaceMapping< Vec3Types, Vec3Types >;
 

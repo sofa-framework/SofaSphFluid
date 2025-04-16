@@ -21,8 +21,39 @@
 ******************************************************************************/
 #include <SofaSphFluid/config.h>
 
+#include <sofa/core/ObjectFactory.h>
+#include <sofa/helper/system/PluginManager.h>
 
-namespace sofa::component
+
+namespace sofa::component::misc
+{
+    extern void registerParticleSink(sofa::core::ObjectFactory* factory);
+    extern void registerParticleSource(sofa::core::ObjectFactory* factory);
+}
+namespace sofa::component::collision
+{
+    extern void registerSpatialGridPointModel(sofa::core::ObjectFactory* factory);
+}
+namespace sofa::component::container
+{
+    extern void registerSpatialGridContainer(sofa::core::ObjectFactory* factory);
+}
+namespace sofa::component::forcefield
+{
+    extern void registerParticlesRepulsionForceField(sofa::core::ObjectFactory* factory);
+    extern void registerSPHFluidForceField(sofa::core::ObjectFactory* factory);
+}
+namespace sofa::component::mapping
+{
+    extern void registerSPHFluidSurfaceMapping(sofa::core::ObjectFactory* factory);
+}
+namespace sofa::component::visualmodel
+{
+    extern void registerOglFluidModel(sofa::core::ObjectFactory* factory);
+}
+
+
+namespace sofasphfluid
 {
 
 extern "C" {
@@ -31,7 +62,7 @@ SOFA_SPH_FLUID_API const char* getModuleName();
 SOFA_SPH_FLUID_API const char* getModuleVersion();
 SOFA_SPH_FLUID_API const char* getModuleLicense();
 SOFA_SPH_FLUID_API const char* getModuleDescription();
-SOFA_SPH_FLUID_API const char* getModuleComponentList();
+SOFA_SPH_FLUID_API void registerObjects(sofa::core::ObjectFactory* factory);
 }
 
 void initExternalModule()
@@ -39,18 +70,21 @@ void initExternalModule()
     static bool first = true;
     if (first)
     {
+        // make sure that this plugin is registered into the PluginManager
+        sofa::helper::system::PluginManager::getInstance().registerPlugin(MODULE_NAME);
+
         first = false;
     }
 }
 
 const char* getModuleName()
 {
-    return "SofaSphFluid";
+    return MODULE_NAME;
 }
 
 const char* getModuleVersion()
 {
-    return "1.0";
+    return MODULE_VERSION;
 }
 
 const char* getModuleLicense()
@@ -63,13 +97,18 @@ const char* getModuleDescription()
     return "This plugin contains fluids simulation based on the SPH method.";
 }
 
-const char* getModuleComponentList()
+void registerObjects(sofa::core::ObjectFactory* factory)
 {
-    return "SpatialGridContainer SPHFluidForceField SPHFluidSurfaceMapping"
-           " ParticleSink ParticuleSource ParticlesRepulsionForceField";
+    sofa::component::misc::registerParticleSink(factory);
+    sofa::component::misc::registerParticleSource( factory);
+    sofa::component::collision::registerSpatialGridPointModel(factory);
+    sofa::component::container::registerSpatialGridContainer(factory);
+    sofa::component::forcefield::registerParticlesRepulsionForceField(factory);
+    sofa::component::forcefield::registerSPHFluidForceField(factory);
+    sofa::component::mapping::registerSPHFluidSurfaceMapping(factory);
+    sofa::component::visualmodel::registerOglFluidModel(factory);
 }
 
-
-} // namespace sofa::component
+} // namespace sofasphfluid
 
 
