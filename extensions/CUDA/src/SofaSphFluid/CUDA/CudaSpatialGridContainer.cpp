@@ -19,7 +19,8 @@
 *                                                                             *
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
-#include <sofa/gpu/cuda/CudaSpatialGridContainer.inl>
+#define SOFASPHFLUID_CUDA_CUDASPATIALGRIDCONTAINER_CPP
+#include <SofaSphFluid/CUDA/CudaSpatialGridContainer.inl>
 #include <sofa/component/statecontainer/MechanicalObject.inl>
 #include <sofa/core/ObjectFactory.h>
 
@@ -36,13 +37,13 @@ int SpatialGridContainerCudaClass = core::RegisterObject("GPU support using CUDA
         .add< SpatialGridContainer<CudaVec3fTypes> >()
         ;
 
-template class SOFA_GPU_CUDA_API SpatialGridContainer< CudaVec3fTypes >;
-template class SOFA_GPU_CUDA_API SpatialGrid< SpatialGridTypes< CudaVec3fTypes > >;
+template class SOFA_SOFASPHFLUID_CUDA_API SpatialGridContainer< CudaVec3fTypes >;
+template class SOFA_SOFASPHFLUID_CUDA_API SpatialGrid< SpatialGridTypes< CudaVec3fTypes > >;
 
 #ifdef SOFA_GPU_CUDA_DOUBLE
 
-template class SpatialGridContainer< CudaVec3dTypes >;
-template class SpatialGrid< SpatialGridTypes< CudaVec3dTypes > >;
+template class SOFA_SOFASPHFLUID_CUDA_API SpatialGridContainer< CudaVec3dTypes >;
+template class SOFA_SOFASPHFLUID_CUDA_API SpatialGrid< SpatialGridTypes< CudaVec3dTypes > >;
 
 #endif // SOFA_GPU_CUDA_DOUBLE
 

@@ -34,8 +34,9 @@
 #ifndef SOFA_GPU_CUDA_CUDASPATIALGRIDCONTAINER_H
 #define SOFA_GPU_CUDA_CUDASPATIALGRIDCONTAINER_H
 
+#include <SofaSphFluid/CUDA/config.h>
 #include <SofaSphFluid/SpatialGridContainer.h>
-#include <sofa/gpu/cuda/CudaTypes.h>
+#include <SofaCUDA/sofa/gpu/cuda/CudaTypes.h>
 #include <sofa/type/Vec.h>
 
 
@@ -122,7 +123,19 @@ protected:
 
 };
 
-} // namespace sofa::component::container
+#if !defined(SOFASPHFLUID_CUDA_CUDASPATIALGRIDCONTAINER_CPP)
+extern template class SOFA_SOFASPHFLUID_CUDA_API SpatialGridContainer<sofa::gpu::cuda::CudaVec3fTypes >;
+extern template class SOFA_SOFASPHFLUID_CUDA_API SpatialGrid<sofa::component::container::SpatialGridTypes<sofa::gpu::cuda::CudaVec3fTypes > >;
 
+#ifdef SOFA_GPU_CUDA_DOUBLE
+
+extern template class SOFA_SOFASPHFLUID_CUDA_API SpatialGridContainer< sofa::gpu::cuda::CudaVec3dTypes >;
+extern template class SOFA_SOFASPHFLUID_CUDA_API SpatialGrid< sofa::component::container::SpatialGridTypes< sofa::gpu::cuda::CudaVec3dTypes > >;
+
+#endif // SOFA_GPU_CUDA_DOUBLE
+
+#endif
+
+} // namespace sofa::component::container
 
 #endif

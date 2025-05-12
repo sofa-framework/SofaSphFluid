@@ -19,7 +19,7 @@
 *                                                                             *
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
-#include "CudaTypes.h"
+#include <SofaCUDA/sofa/gpu/cuda/CudaTypes.h>
 #include "CudaParticleSource.inl"
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/core/behavior/ProjectiveConstraintSet.h>

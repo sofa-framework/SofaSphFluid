@@ -22,9 +22,10 @@
 #ifndef SOFA_GPU_CUDA_CUDASPHFLUIDFORCEFIELD_H
 #define SOFA_GPU_CUDA_CUDASPHFLUIDFORCEFIELD_H
 
-#include <sofa/gpu/cuda/CudaTypes.h>
+#include <SofaSphFluid/CUDA/config.h>
+#include <SofaCUDA/sofa/gpu/cuda/CudaTypes.h>
 #include <SofaSphFluid/SPHFluidForceField.h>
-#include <sofa/gpu/cuda/CudaSpatialGridContainer.h>
+#include <SofaSphFluid/CUDA/CudaSpatialGridContainer.h>
 
 namespace sofa
 {

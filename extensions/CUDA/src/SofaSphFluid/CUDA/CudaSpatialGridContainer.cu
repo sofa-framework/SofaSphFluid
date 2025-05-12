@@ -50,9 +50,9 @@
  */
 
 
-#include <sofa/gpu/cuda/CudaCommon.h>
-#include <sofa/gpu/cuda/CudaMath.h>
-#include <sofa/gpu/cuda/mycuda.h>
+#include <SofaCUDA/sofa/gpu/cuda/CudaCommon.h>
+#include <SofaCUDA/sofa/gpu/cuda/CudaMath.h>
+#include <SofaCUDA/sofa/gpu/cuda/mycuda.h>
 #include <cuda.h>
 
 #if defined(__cplusplus) && CUDA_VERSION < 2000

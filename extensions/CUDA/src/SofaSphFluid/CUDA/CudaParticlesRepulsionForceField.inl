@@ -24,7 +24,7 @@
 
 #include "CudaParticlesRepulsionForceField.h"
 #include <SofaSphFluid/ParticlesRepulsionForceField.inl>
-//#include <sofa/gpu/cuda/CudaSpatialGridContainer.inl>
+//#include <SofaSphFluid/CUDA/CudaSpatialGridContainer.inl>
 
 namespace sofa
 {
