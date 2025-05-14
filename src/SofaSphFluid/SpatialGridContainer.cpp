@@ -30,14 +30,14 @@ namespace sofa::component::container
 using namespace sofa::defaulttype;
 using namespace core::behavior;
 
-
-int SpatialGridContainerClass = core::RegisterObject("Hashing spatial grid container, used for SPH fluids for instance.")
-        .add< SpatialGridContainer<Vec3Types> >()
-        ;
+void registerSpatialGridContainer(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Hashing spatial grid container, used for SPH fluids for instance.")
+    .add< SpatialGridContainer<Vec3Types> >());
+}
 
 template class SOFA_SPH_FLUID_API SpatialGridContainer< Vec3Types >;
 template class SOFA_SPH_FLUID_API SpatialGrid< SpatialGridTypes< Vec3Types > >;
-
 
 } // namespace sofa::component::container
 

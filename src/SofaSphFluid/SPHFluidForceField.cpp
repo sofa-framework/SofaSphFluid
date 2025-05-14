@@ -32,16 +32,14 @@ namespace sofa::component::forcefield
 using namespace sofa::defaulttype;
 using namespace core::behavior;
 
-
-int SPHFluidForceFieldClass = core::RegisterObject("Smooth Particle Hydrodynamics")
-        .add< SPHFluidForceField<Vec3Types> >()
-//.add< SPHFluidForceField<Vec2Types> >()
-
-        ;
+void registerSPHFluidForceField(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Smooth Particle Hydrodynamics.")
+    .add< SPHFluidForceField<Vec3Types> >());
+}
 
 template class SOFA_SPH_FLUID_API SPHFluidForceField<Vec3Types>;
 template class SOFA_SPH_FLUID_API SPHFluidForceField<Vec2Types>;
-
 
 } // namespace sofa::component::forcefield
 

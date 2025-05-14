@@ -28,15 +28,16 @@
 namespace sofa::component::misc
 {
 
-int ParticleSourceClass = core::RegisterObject("Parametrable particle generator")
-        .add< ParticleSource<defaulttype::Vec3Types> >()
-        .add< ParticleSource<defaulttype::Vec2Types> >()
+void registerParticleSource(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("Parametrable particle generator.")
+    .add< ParticleSource<defaulttype::Vec3Types> >()
+    .add< ParticleSource<defaulttype::Vec2Types> >());
+}
 
-        ;
 
 template class SOFA_SPH_FLUID_API ParticleSource<defaulttype::Vec3Types>;
 template class SOFA_SPH_FLUID_API ParticleSource<defaulttype::Vec2Types>;
-
 
 }
 

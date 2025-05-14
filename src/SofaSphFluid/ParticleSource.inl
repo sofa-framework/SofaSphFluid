@@ -307,8 +307,8 @@ void ParticleSource<DataTypes>::animateBegin(double /*dt*/, double time)
             this->mstate->resize(i0 + nbParticlesToCreate);
         }
 
-        helper::WriteAccessor< Data<VecCoord> > x = *this->mstate->write(core::VecCoordId::position());
-        helper::WriteAccessor< Data<VecDeriv> > v = *this->mstate->write(core::VecDerivId::velocity());
+        helper::WriteAccessor< Data<VecCoord> > x = *this->mstate->write(core::vec_id::write_access::position);
+        helper::WriteAccessor< Data<VecDeriv> > v = *this->mstate->write(core::vec_id::write_access::velocity);
         for (size_t s = 0; s < nbParticlesToCreate; ++s)
         {
             x[i0 + s] = newX[s];

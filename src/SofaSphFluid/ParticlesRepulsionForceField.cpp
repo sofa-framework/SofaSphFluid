@@ -32,16 +32,15 @@ namespace sofa::component::forcefield
 using namespace sofa::defaulttype;
 using namespace core::behavior;
 
-
-int ParticlesRepulsionForceFieldClass = core::RegisterObject("ForceField using SpatialGridContainer to compute repulsion forces in a set of spheres")
-        .add< ParticlesRepulsionForceField<Vec3Types> >()
-        .add< ParticlesRepulsionForceField<Vec2Types> >()
-
-        ;
+void registerParticlesRepulsionForceField(sofa::core::ObjectFactory* factory)
+{
+    factory->registerObjects(sofa::core::ObjectRegistrationData("ForceField using SpatialGridContainer to compute repulsion forces in a set of spheres.")
+    .add< ParticlesRepulsionForceField<Vec3Types> >()
+    .add< ParticlesRepulsionForceField<Vec2Types> >());
+}
 
 template class SOFA_SPH_FLUID_API ParticlesRepulsionForceField<Vec3Types>;
 template class SOFA_SPH_FLUID_API ParticlesRepulsionForceField<Vec2Types>;
-
 
 } // namespace sofa::component::forcefield
 

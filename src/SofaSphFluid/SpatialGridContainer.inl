@@ -699,7 +699,7 @@ template<class DataTypes>
 bool SpatialGridContainer<DataTypes>::sortPoints()
 {
     if (mstate)
-        updateGrid(mstate->read(core::ConstVecCoordId::position())->getValue());
+        updateGrid(mstate->read(core::vec_id::read_access::position)->getValue());
 
     msg_info() << "sortPoints(): sorting...";
 
@@ -771,7 +771,7 @@ void SpatialGridContainer<DataTypes>::handleEvent(sofa::core::objectmodel::Event
         else if (d_autoUpdate.getValue())
         {
             if (mstate)
-                updateGrid(mstate->read(core::ConstVecCoordId::position())->getValue());
+                updateGrid(mstate->read(core::vec_id::read_access::position)->getValue());
         }
     }
 }
