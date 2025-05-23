@@ -23,7 +23,7 @@
 #define SOFA_GPU_CUDA_CUDASPHFLUIDFORCEFIELD_H
 
 #include <SofaSphFluid/CUDA/config.h>
-#include <SofaCUDA/sofa/gpu/cuda/CudaTypes.h>
+#include <sofa/gpu/cuda/CudaTypes.h>
 #include <SofaSphFluid/SPHFluidForceField.h>
 #include <SofaSphFluid/CUDA/CudaSpatialGridContainer.h>
 

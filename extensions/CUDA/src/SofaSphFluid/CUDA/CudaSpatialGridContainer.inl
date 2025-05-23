@@ -35,7 +35,7 @@
 #define SOFA_GPU_CUDA_CUDASPATIALGRIDCONTAINER_INL
 
 #include <SofaSphFluid/CUDA/CudaSpatialGridContainer.h>
-#include <SofaCUDA/sofa/gpu/cuda/CudaSort.h>
+#include <sofa/gpu/cuda/CudaSort.h>
 #include <SofaSphFluid/SpatialGridContainer.inl>
 #include <sofa/gl/template.h>
 
