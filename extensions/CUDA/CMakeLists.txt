@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(SofaSphFluid.CUDA CUDA CXX)
+project(SofaSphFluid.CUDA LANGUAGES CUDA CXX)
 
 set(HEADER_FILES
     src/SofaSphFluid/CUDA/init.h
