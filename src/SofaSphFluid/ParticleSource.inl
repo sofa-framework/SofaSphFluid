@@ -24,6 +24,7 @@
 #include <SofaSphFluid/config.h>
 
 #include <SofaSphFluid/ParticleSource.h>
+#include <sofa/core/behavior/ProjectiveConstraintSet.inl>
 #include <sofa/component/topology/container/dynamic/PointSetTopologyContainer.h>
 #include <sofa/component/topology/container/dynamic/PointSetTopologyModifier.h>
 #include <sofa/simulation/AnimateBeginEvent.h>
