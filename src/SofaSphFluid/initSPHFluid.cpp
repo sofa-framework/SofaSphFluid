@@ -20,6 +20,7 @@
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
 #include <SofaSphFluid/config.h>
+#include <SofaSphFluid/initSPHFluid.h>
 
 #include <sofa/core/ObjectFactory.h>
 #include <sofa/helper/system/PluginManager.h>
@@ -65,7 +66,7 @@ SOFA_SPH_FLUID_API const char* getModuleDescription();
 SOFA_SPH_FLUID_API void registerObjects(sofa::core::ObjectFactory* factory);
 }
 
-void initExternalModule()
+void init()
 {
     static bool first = true;
     if (first)
@@ -75,6 +76,11 @@ void initExternalModule()
 
         first = false;
     }
+}
+
+void initExternalModule()
+{
+    init();
 }
 
 const char* getModuleName()
