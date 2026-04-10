@@ -11,6 +11,7 @@ sofa_find_package(Sofa.GL QUIET)
 set(PLUGIN_SPH_SRC_DIR src/SofaSphFluid)
 set(HEADER_FILES
     ${PLUGIN_SPH_SRC_DIR}/config.h.in
+    ${PLUGIN_SPH_SRC_DIR}/initSPHFluid.h
     ${PLUGIN_SPH_SRC_DIR}/ParticleSink.h
     ${PLUGIN_SPH_SRC_DIR}/ParticleSink.inl
     ${PLUGIN_SPH_SRC_DIR}/ParticleSource.h
@@ -74,3 +75,5 @@ sofa_create_package_with_targets(
     INCLUDE_INSTALL_DIR ${PROJECT_NAME}
     RELOCATABLE "plugins"
     )
+
+sofa_add_subdirectory(plugin extensions/CUDA SofaSphFluid.CUDA)
