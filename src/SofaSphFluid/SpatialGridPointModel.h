@@ -23,7 +23,7 @@
 #define SOFA_COMPONENT_COLLISION_SPATIALGRIDPOINTMODEL_H
 #include <SofaSphFluid/config.h>
 
-#include <sofa/component/collision/geometry/PointModel.h>
+#include <sofa/component/collision/geometry/PointCollisionModel.h>
 #include <SofaSphFluid/SpatialGridContainer.h>
 #include <sofa/defaulttype/VecTypes.h>
 #include <vector>

@@ -21,7 +21,7 @@
 ******************************************************************************/
 #include <SofaSphFluid/SpatialGridPointModel.h>
 #include <sofa/core/visual/VisualParams.h>
-#include <sofa/component/collision/geometry/CubeModel.h>
+#include <sofa/component/collision/geometry/CubeCollisionModel.h>
 #include <sofa/core/ObjectFactory.h>
 #include <vector>
 
