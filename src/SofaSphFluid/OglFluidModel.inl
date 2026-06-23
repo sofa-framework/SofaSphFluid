@@ -125,14 +125,14 @@ void OglFluidModel<DataTypes>::doUpdateVisual(const core::visual::VisualParams* 
 }
 
 template<class DataTypes>
-void OglFluidModel<DataTypes>::fwdDraw(core::visual::VisualParams* vparams)
+void OglFluidModel<DataTypes>::doFwdDraw(core::visual::VisualParams* vparams)
 {
     updateVisual(vparams);
 
 }
 
 template<class DataTypes>
-void OglFluidModel<DataTypes>::bwdDraw(core::visual::VisualParams*)
+void OglFluidModel<DataTypes>::doBwdDraw(core::visual::VisualParams*)
 {
 
 }
@@ -659,7 +659,7 @@ void OglFluidModel<DataTypes>::doDrawVisual(const core::visual::VisualParams* vp
     glEnable(GL_DEPTH_TEST);
 }
 template<class DataTypes>
-void OglFluidModel<DataTypes>::drawTransparent(const core::visual::VisualParams* vparams)
+void OglFluidModel<DataTypes>::doDrawTransparent(const core::visual::VisualParams* vparams)
 {
     vparams->drawTool()->saveLastState();
     

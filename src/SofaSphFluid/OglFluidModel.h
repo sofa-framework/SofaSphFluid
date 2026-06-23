@@ -76,6 +76,14 @@ private:
 protected:
     OglFluidModel();
     virtual ~OglFluidModel();
+
+
+    void doInitVisual(const core::visual::VisualParams* vparams) override;
+    void doFwdDraw(core::visual::VisualParams*) override;
+    void doBwdDraw(core::visual::VisualParams*) override;
+    void doDrawVisual(const core::visual::VisualParams* vparams) override;
+    void doDrawTransparent(const core::visual::VisualParams* vparams) override;
+
 public:
     Data<unsigned int> d_debugFBO; ///< DEBUG FBO
     Data<float> d_spriteRadius; ///< Radius of sprites
@@ -87,11 +95,6 @@ public:
 
 
     void init() override;
-    void doInitVisual(const core::visual::VisualParams* vparams) override;
-    void fwdDraw(core::visual::VisualParams*) override;
-    void bwdDraw(core::visual::VisualParams*) override;
-    void doDrawVisual(const core::visual::VisualParams* vparams) override;
-    void drawTransparent(const core::visual::VisualParams* vparams) override;
     void computeBBox(const core::ExecParams* params, bool onlyVisible = false) override;
 
     void doUpdateVisual(const core::visual::VisualParams* vparams) override;
