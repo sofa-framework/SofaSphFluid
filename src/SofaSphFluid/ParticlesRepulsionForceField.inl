@@ -168,12 +168,6 @@ void ParticlesRepulsionForceField<DataTypes>::addDForce(const core::MechanicalPa
 }
 
 template<class DataTypes>
-void ParticlesRepulsionForceField<DataTypes>::addKToMatrix(const sofa::core::MechanicalParams* /*mparams*/, const sofa::core::behavior::MultiMatrixAccessor* /*matrix*/)
-{
-    return;
-}
-
-template<class DataTypes>
 void ParticlesRepulsionForceField<DataTypes>::draw(const core::visual::VisualParams* vparams)
 {
     if (!vparams->displayFlags().getShowForceFields() && !vparams->displayFlags().getShowInteractionForceFields())
