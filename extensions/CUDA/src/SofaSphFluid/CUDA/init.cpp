@@ -53,7 +53,7 @@ void init()
     if (first)
     {
         sofasphfluid::init();
-        sofa::gpu::cuda::init();
+        sofacuda::init();
         first = false;
     }
 }
