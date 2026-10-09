@@ -49,7 +49,7 @@ public:
 
     // -- CollisionModel interface
 
-    void computeBoundingTree(int maxDepth=0) override;
+    void doComputeBoundingTree(int maxDepth=0) override;
 
     Grid* getGrid() { return grid->getGrid(); }
 protected:
